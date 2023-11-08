@@ -5,6 +5,7 @@ using UnityEngine;
 public class BalaPlayer : MonoBehaviour
 {
     [SerializeField] private float speed = 5;
+    [SerializeField] private float direccion;
 
     void Start ()
     {
@@ -13,6 +14,6 @@ public class BalaPlayer : MonoBehaviour
 
     void Update()
     {
-        gameObject.transform.position += new Vector3 (0, 0, speed * Time.deltaTime);  
+        gameObject.transform.position += new Vector3 (0, 0, direccion * speed * Time.deltaTime);  
     }
 }
