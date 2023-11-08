@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class Enemigo02Move : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject balaPrefab;
+    private float speed = 3;
+    private float intervalo;
+    private bool direccion = true;
+
+    void Start ()
     {
+        intervalo = Random.Range(0.1f ,3);
+        InvokeRepeating("Disparar", 0, intervalo);
+    }
+
+    void Update()
+    {
+        if(direccion)
+        {
+            gameObject.transform.position += new Vector3 (speed * Time.deltaTime, 0,0); 
+        }
+        else
+        {
+            gameObject.transform.position += new Vector3 (-speed * Time.deltaTime, 0,0);
+        }
+
+        if (transform.position.x >= 5 || transform.position.x <= -5)
+        {
+            direccion = !direccion;
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void Disparar ()
     {
-        
+        Instantiate(balaPrefab, transform.position, Quaternion.identity);
     }
 }
