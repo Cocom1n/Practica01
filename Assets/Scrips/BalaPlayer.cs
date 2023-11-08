@@ -9,7 +9,7 @@ public class BalaPlayer : MonoBehaviour
 
     void Start ()
     {
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 2);
     }
 
     void Update()
