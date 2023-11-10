@@ -10,13 +10,16 @@ public class Enemigo01Move : MonoBehaviour
 
     void Start ()
     {
-        Destroy(gameObject, 3);
         InvokeRepeating("Disparar", 0, intervalo);
     }
 
     void Update()
     {
         gameObject.transform.position += new Vector3 (- speed * Time.deltaTime, 0, - speed * Time.deltaTime);  
+        if(gameObject.transform.position.x <= -4.5f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Disparar ()

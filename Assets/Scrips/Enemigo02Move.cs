@@ -11,7 +11,7 @@ public class Enemigo02Move : MonoBehaviour
 
     void Start ()
     {
-        intervalo = Random.Range(0.1f ,3);
+        intervalo = Random.Range(1.0f ,4.0f);
         InvokeRepeating("Disparar", 0, intervalo);
     }
 

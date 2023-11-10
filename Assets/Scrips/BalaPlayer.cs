@@ -9,11 +9,29 @@ public class BalaPlayer : MonoBehaviour
 
     void Start ()
     {
-        Destroy(gameObject, 2);
+
     }
 
     void Update()
     {
         gameObject.transform.position += new Vector3 (0, 0, direccion * speed * Time.deltaTime);  
+
+
+        if(direccion == 1)
+        {
+            if(gameObject.transform.position.z >= 5f )
+            {
+                Destroy(gameObject);
+                Debug.Log("O");
+            }
+        }
+        else{
+            if(gameObject.transform.position.z <= -5f )
+            {
+                Destroy(gameObject);
+                Debug.Log("I");
+            }
+        }
+        
     }
 }
