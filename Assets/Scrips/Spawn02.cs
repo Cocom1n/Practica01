@@ -5,14 +5,12 @@ using UnityEngine;
 public class Spawn02 : MonoBehaviour
 {
     [SerializeField] private GameObject enemigo;
+    [SerializeField]private float cantEnemigos = 5;
     private float speed = 2;
     private bool direccion = true;
-    private float contador = 5;
-
-
+    
     void Start()
     {
-        
         InvokeRepeating("spawn", 1, 2);
     }
 
@@ -30,18 +28,15 @@ public class Spawn02 : MonoBehaviour
         if (transform.position.z >= 4 || transform.position.z <= -4)
         {
             direccion = !direccion;
-        }
-        
+        }   
     }
 
     void spawn()
     {
-        if(contador>0)
+        if(cantEnemigos>0)
         {
             Instantiate(enemigo, transform.position, Quaternion.identity);
-            contador-=1;
+            cantEnemigos-=1;
         }
-        
-
     }
 }

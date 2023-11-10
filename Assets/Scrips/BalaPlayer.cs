@@ -22,14 +22,12 @@ public class BalaPlayer : MonoBehaviour
             if(gameObject.transform.position.z >= 5f )
             {
                 Destroy(gameObject);
-                Debug.Log("O");
             }
         }
         else{
             if(gameObject.transform.position.z <= -5f )
             {
                 Destroy(gameObject);
-                Debug.Log("I");
             }
         }
         
