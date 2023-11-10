@@ -442,7 +442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balaPrefab: {fileID: 7480340232086955954, guid: 664f21720227b9247862750d393646db, type: 3}
-  speed: 5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigo: {fileID: 5329613767019162549, guid: 6223bebc356fab345b4bfd0a644e6170, type: 3}
+  cantEnemigos: 5
 --- !u!4 &1841721993
 Transform:
   m_ObjectHideFlags: 0
